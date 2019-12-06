@@ -51,11 +51,11 @@ private suspend fun CoroutineScope.updateLoop(config: Config, system: System, ch
 
 private suspend fun renderLoop(renderer: Renderer, channel: ReceiveChannel<GameState>) {
     while(true) {
-        var oldState : GameState? = null
+        //var oldState : GameState? = null
         for (newState in channel) {
-            if (oldState == newState) continue
+            //if (oldState == newState) continue
             renderer.onRender(newState)
-            oldState = newState
+            //oldState = newState
         }
     }
 }
