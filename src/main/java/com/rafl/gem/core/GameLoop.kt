@@ -9,20 +9,20 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ReceiveChannel
 
 typealias GameState = PersistentList<Entity>
+fun emptyState(): GameState = persistentListOf()
 
-fun gameLoop(system: System) = runBlocking {
+fun gameLoop(renderer: Renderer, config: Config, system: System) = runBlocking {
     val shared = Channel<GameState>(Channel.CONFLATED)
-    val renderer = getDefaultRenderer()
 
     renderer.load()
     launch(Dispatchers.Default) {
-        updateLoop(system, shared)
+        updateLoop(config, system, shared)
     }
     renderLoop(renderer, shared)
 }
 
-private suspend fun CoroutineScope.updateLoop(system: System, channel: Channel<GameState>) {
-    var gameState = persistentListOf<Entity>()
+private suspend fun CoroutineScope.updateLoop(config: Config, system: System, channel: Channel<GameState>) {
+    var gameState = emptyState()
     var ticks = 0
     var timer = java.lang.System.currentTimeMillis()
     val dt = (1e9/60).toLong()
@@ -34,15 +34,15 @@ private suspend fun CoroutineScope.updateLoop(system: System, channel: Channel<G
         elapsed += now - before
         before = now
 
-        while(elapsed >= dt) {
-            //elapsed = 0 ???
-            elapsed -= dt
+        if(elapsed >= dt) {
+            elapsed = 0
             ticks++
-            gameState = system.operate(gameState)
+            gameState = system(config, gameState)
             channel.send(gameState)
         }
 
         if (java.lang.System.currentTimeMillis() - timer >= 1000) {
+            println(ticks)
             timer += 1000
             ticks = 0
         }
