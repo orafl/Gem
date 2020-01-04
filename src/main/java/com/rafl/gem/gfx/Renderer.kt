@@ -7,4 +7,7 @@ interface Renderer {
     fun onRender(gameState: GameState)
 }
 
-fun getDefaultRenderer(): Renderer = SwingRenderer()
+fun getDefaultRenderer(): Renderer = //SwingRenderer()
+object : Renderer {
+    override fun onRender(gameState: GameState) {}
+}

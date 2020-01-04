@@ -4,52 +4,33 @@ import com.rafl.gem.core.*
 import com.rafl.gem.gfx.getDefaultRenderer
 import kotlinx.collections.immutable.plus
 
-class Foo(val num: Int)
-
 class MySystem : ESystem() {
+    private var c = 1
     override fun op(global: Entity?, e: Entity): Entity? {
         println(e)
         if (e.get<Unit>("_gemStub") != null) {
             add(entity {it["name"] = c })
             c++
-            //return null
+            return null
         }
-        val option = global?.get<Int>("option") ?: 0
-        val a = option + c
-        val cx = e.get<Foo>("foo1") ?: return e
-        return e.put("foo1", Foo(cx.num + a))
-    }
-    private var c = 1
-}
 
-fun main() {
-    /*val mut = mutableListOf(0, 1, 2, 5, 6)
-    val i = mut.listIterator()
-    val toAdd = listOf(3, 4)
-    val stop = 5
-    for(n in 0..toAdd.lastIndex) {
-        while (i.hasNext()) {
-            val p = i.next()
-            if (p == stop) {
-                i.previous()
-                break
-            }
+        if (e.get<Int>("name") == 1) {
+            add(entity {it["name"] = c })
+            c++
         }
-        i.add(toAdd[n])
-        i.previous()
+        return e
     }
-    println(mut)*/
-    demo()
 }
 
 fun demo() {
-    val initialState = stubState() + entity {
-        it["_gemHidden"] = true
+    val initialState = stubState()
+    val config = entity {
         it["name"] = "config"
     }
-
-    val game = group(MySystem()) {
-        find { it.get<String>("name") == "config" }
-    }
+    val game = group(config, MySystem())
     gameLoop(getDefaultRenderer(), initialState, game)
+}
+
+fun main() {
+    demo()
 }

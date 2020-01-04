@@ -39,7 +39,7 @@ private suspend fun CoroutineScope.updateLoop(
         }
 
         if (java.lang.System.currentTimeMillis() - timer >= 1000) {
-            println(ticks)
+            //println(ticks)
             timer += 1000
             ticks = 0
         }

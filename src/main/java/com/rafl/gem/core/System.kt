@@ -2,6 +2,8 @@ package com.rafl.gem.core
 
 import kotlinx.collections.immutable.plus
 import kotlinx.collections.immutable.toPersistentList
+import java.util.*
+import kotlin.collections.LinkedHashSet
 
 typealias System = (GameState) -> GameState
 
@@ -22,14 +24,13 @@ abstract class ESystem {
     }
 }
 
-fun group(vararg systems: ESystem, fglobal: GameState.() -> Entity?) = system { gs ->
-    val global = fglobal(gs)
-    val mut = gs.toMutableList()
-    val i = mut.listIterator()
-    while(i.hasNext()) {
-        val ent = i.next()
-        val stop = if (i.hasNext()) i.next() else null
-        if (ent.get<Boolean>("_gemHidden") == true) continue
+fun group(global: Entity?, vararg systems: ESystem) = system { gs ->
+    val mut: Queue<Entity> = LinkedList(gs.toMutableList())
+    val repeats = LinkedHashSet<Entity>()
+    while (mut.size > 0) {
+        val ent = mut.remove()
+        if (ent in repeats) continue
+
         var deleted = false
         val (newEnt, newState) = systems.fold(ent to gameStateWith()
         ) { acc, sys ->
@@ -39,21 +40,12 @@ fun group(vararg systems: ESystem, fglobal: GameState.() -> Entity?) = system { 
             deleted = r == null
             if (!deleted) (r!! to s) else (acc.first to s)
         }
-        if(deleted) i.remove() else i.set(newEnt)
 
-        if (newState.isEmpty()) continue
-        for(n in 0..newState.lastIndex) {
-            while (i.hasNext()) {
-                val p = i.next()
-                if (p == stop) {
-                    i.previous()
-                    break
-                }
-            }
-            i.add(newState[n])
-            i.previous()
+        if (!deleted) {
+            repeats.add(newEnt); mut.add(newEnt)
         }
-        //newState.forEach(i::add)
+        newState.forEach { mut.add(it) }
     }
-    mut.toPersistentList()
+
+    repeats.toPersistentList()
 }

@@ -2,42 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91285f87-224f-4efa-b564-34eb9b37b163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/RendererKt$getDefaultRenderer$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rafl/gem/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rafl/gem/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/Config.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/Entity.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameLoop.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameLoop.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/System.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/System.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/rafl/gem/test/unit/Collections.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/rafl/gem/test/unit/Collections.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Gem.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/Gem.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rafl/gem/gfx/Renderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rafl/gem/gfx/Renderer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/Foo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/MainKt$demo$game$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/Entity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt$gameLoop$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt$gameLoop$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt$gameLoop$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt$gameLoop$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt$renderLoop$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt$renderLoop$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt$updateLoop$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt$updateLoop$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/MySystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/MySystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/ESystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/ESystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/GameLoopKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemClass.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemKt$chain$$inlined$system$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemKt$chain$$inlined$system$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemKt$group$$inlined$system$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemKt$group$$inlined$system$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemKt$system$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemKt$system$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/core/SystemKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/Renderer$DefaultImpls.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/Renderer$DefaultImpls.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/Renderer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/RendererKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/RendererKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/SwingRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/gfx/SwingRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/utils/Line.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/utils/Line.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/utils/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/utils/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/utils/SpaceKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/utils/SpaceKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rafl/gem/utils/Vectwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rafl/gem/utils/Vectwo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/Gem.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/META-INF/Gem.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/rafl/gem/test/unit/GeometryKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/rafl/gem/test/unit/GeometryKt.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,34 +36,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#22#133#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/core/System.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1402">
-              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-              <folding>
-                <element signature="e#27#122#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameLoop.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1452">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-              <folding>
-                <element signature="e#27#180#0" expanded="true" />
-                <element signature="n#!!block;n#renderLoop#0" />
               </folding>
             </state>
           </provider>
@@ -107,8 +63,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/Entity.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/ECS.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameLoop.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameState.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rafl/gem/gfx/Renderer.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameLoop.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/rafl/gem/core/System.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/rafl/gem/Main.kt" />
       </list>
@@ -135,7 +92,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,6 +164,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -322,7 +279,7 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16912752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -331,8 +288,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39678285" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4075067" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -423,6 +380,14 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="((java.util.ArrayList)mut).get(1)" custom="java.util.ArrayList" />
+        <watch expression="mut" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/com/rafl/gem/test/unit/Collections.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -460,13 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/gfx/Renderer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-collections-immutable-jvm/0.3/kotlinx-collections-immutable-jvm-0.3.jar!/kotlinx/collections/immutable/PersistentList.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -478,13 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="2038" column="38" selection-start-line="2038" selection-start-column="38" selection-end-line="2038" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-collections-immutable-jvm/0.3/kotlinx-collections-immutable-jvm-0.3.jar!/kotlinx/collections/immutable/ExtensionsKt.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -502,17 +453,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameState.kt">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-collections-immutable-jvm/0.3/kotlinx-collections-immutable-jvm-0.3.jar!/kotlinx/collections/immutable/ExtensionsKt.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Queue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        <state relative-caret-position="-684">
+          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/gfx/Renderer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/LinkedHashSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="117" column="13" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/collections/TypeAliases.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="15" column="80" lean-forward="true" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameLoop.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1452">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="1226">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
           <folding>
             <element signature="e#27#180#0" expanded="true" />
             <element signature="n#!!block;n#renderLoop#0" />
@@ -520,12 +495,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/core/GameState.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/core/System.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1402">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        <state relative-caret-position="1144">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
           <folding>
-            <element signature="e#27#122#0" expanded="true" />
+            <element signature="e#27#181#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -533,7 +515,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rafl/gem/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#22#133#0" expanded="true" />
           </folding>
