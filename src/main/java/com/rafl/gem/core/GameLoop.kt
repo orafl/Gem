@@ -1,28 +1,25 @@
 package com.rafl.gem.core
 
 import com.rafl.gem.gfx.Renderer
-import com.rafl.gem.gfx.getDefaultRenderer
-import kotlinx.collections.immutable.PersistentList
-import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ReceiveChannel
 
-typealias GameState = PersistentList<Entity>
-fun emptyState(): GameState = persistentListOf()
-
-fun gameLoop(renderer: Renderer, config: Config, system: System) = runBlocking {
+fun gameLoop(renderer: Renderer, initialState: GameState, system: System)
+        : Nothing = runBlocking {
     val shared = Channel<GameState>(Channel.CONFLATED)
 
     renderer.load()
     launch(Dispatchers.Default) {
-        updateLoop(config, system, shared)
+        updateLoop(initialState, system, shared)
     }
     renderLoop(renderer, shared)
 }
 
-private suspend fun CoroutineScope.updateLoop(config: Config, system: System, channel: Channel<GameState>) {
-    var gameState = emptyState()
+private suspend fun CoroutineScope.updateLoop(
+    initialState: GameState, system: System, channel: Channel<GameState>)
+{
+    var gameState = initialState
     var ticks = 0
     var timer = java.lang.System.currentTimeMillis()
     val dt = (1e9/60).toLong()
@@ -37,25 +34,24 @@ private suspend fun CoroutineScope.updateLoop(config: Config, system: System, ch
         if(elapsed >= dt) {
             elapsed = 0
             ticks++
-            gameState = system(config, gameState)
+            gameState = system(gameState)
             channel.send(gameState)
         }
 
         if (java.lang.System.currentTimeMillis() - timer >= 1000) {
-            println(ticks)
+            //println(ticks)
             timer += 1000
             ticks = 0
         }
     }
 }
 
-private suspend fun renderLoop(renderer: Renderer, channel: ReceiveChannel<GameState>) {
+private suspend fun renderLoop(
+    renderer: Renderer, channel: ReceiveChannel<GameState>) : Nothing
+{
     while(true) {
-        var oldState : GameState? = null
         for (newState in channel) {
-            if (oldState == newState) continue
             renderer.onRender(newState)
-            oldState = newState
         }
     }
 }
