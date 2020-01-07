@@ -4,10 +4,10 @@ import com.rafl.gem.core.GameState
 
 interface Renderer {
     suspend fun load() {}
-    fun onRender(gameState: GameState)
+    fun render(gameState: GameState)
 }
 
 fun getDefaultRenderer(): Renderer = //SwingRenderer()
 object : Renderer {
-    override fun onRender(gameState: GameState) {}
+    override fun render(gameState: GameState) {}
 }
