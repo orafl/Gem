@@ -2,28 +2,34 @@ package com.rafl.gem
 
 import com.rafl.gem.core.*
 import com.rafl.gem.gfx.getDefaultRenderer
-import kotlinx.collections.immutable.plus
 
 class MySystem : ESystem() {
-    private var c = 1
-    override fun op(global: Entity?, e: Entity): Entity? {
-        println(e)
-        if (e.get<Unit>("_gemStub") != null) {
-            add(entity {it["name"] = c })
-            c++
-            return null
-        }
+    var a = 0
+    private var gameState: Asset<GameState>? = null
+    private var write = Asset.overwrite("/entity/Game.json",
+        AssetWritter.writeToJson(entity { it["id"] = "lol" }))
 
-        if (e.get<Int>("name") == 1) {
-            add(entity {it["name"] = c })
-            c++
+    override fun op(global: Entity?, e: Entity): Entity? {
+        print(e)
+        if (e.get<Unit>("_gemStub") != null) {
+            a++
+            if (a > 4*60 && write.finished() && gameState == null ) {
+                gameState = Asset.load {
+                    gameStateFromJson("/entity/Game.json")
+                }
+            }
+            if (a > 6*60 && gameState != null) {
+                val s = gameState?.get() ?: return e
+                s.forEach(this::add)
+                return null
+            }
         }
         return e
     }
 }
 
 fun demo() {
-    val initialState = stubState()
+    val initialState = stubState()//loadFromJson(json)
     val config = entity {
         it["name"] = "config"
     }

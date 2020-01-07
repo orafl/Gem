@@ -25,7 +25,7 @@ class SwingRenderer : Renderer {
 
         println("Successfully loaded resources in $time ms")
     }
-    override fun onRender(gameState: GameState) {
+    override fun render(gameState: GameState) {
         val bs = canvas.bufferStrategy
             ?: run {
                 canvas.createBufferStrategy(3)
