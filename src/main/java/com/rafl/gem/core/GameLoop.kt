@@ -1,9 +1,14 @@
 package com.rafl.gem.core
 
 import com.rafl.gem.gfx.Renderer
+import com.rafl.gem.io.internalBindings
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ReceiveChannel
+
+fun gemInit() {
+    internalBindings()
+}
 
 fun gameLoop(renderer: Renderer, initialState: GameState, system: System)
         : Nothing = runBlocking {

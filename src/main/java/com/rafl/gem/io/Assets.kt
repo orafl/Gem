@@ -1,31 +1,33 @@
-package com.rafl.gem.core
+package com.rafl.gem.io
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.rafl.gem.core.Entity
+import com.rafl.gem.core.GameState
+import com.rafl.gem.utils.startAsync
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.collections.immutable.toPersistentMap
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import java.io.File
 import java.io.FileInputStream
 
 @Suppress("EXPERIMENTAL_API_USAGE")
-inline class Asset<T> (private val value: Deferred<T>) {
+inline class Asset<out T> (private val value: Deferred<T>) {
     fun get() : T? = try {
         value.getCompleted()
     } catch (e: IllegalStateException) { null }
 
     companion object {
-        inline fun <T> load(crossinline f: AssetReader.() -> T) = Asset(
-            GlobalScope.async(Dispatchers.IO) { AssetReader.f() })
+
+        inline fun <T> load(crossinline f: AssetReader.() -> T) =
+            Asset(startAsync(Dispatchers.IO) { AssetReader.f() })
 
         fun overwrite(path: String, content: ByteArray) =
             load { File(path).writeBytes(content) }
 
         fun overwrite(path: String, content: String)
-                =  overwrite(path, content.toByteArray())
+                = overwrite(path, content.toByteArray())
     }
 }
 
@@ -41,7 +43,7 @@ object AssetReader {
         val sb = StringBuilder()
         val ents = ArrayList<Entity>()
         var count = 0
-        FileInputStream(File(path)).use {
+        FileInputStream(Any::class.java.getResource(path).file).use {
             var next = it.read()
             while (next != -1) {
                 if (next == '{'.toInt()) count++
@@ -50,10 +52,7 @@ object AssetReader {
                     if (--count == 0) {
                         val src = sb.toString()
                         val ent = mapper.parse<MutableMap<String, Any?>>(src)
-                        ent.keys.forEach { k ->
-                            if (ent[k] is ArrayList<*>)
-                                ent[k] = (ent[k] as ArrayList<*>).toPersistentList()
-                        }
+                        parseEntity(ent)
                         ents += ent.toPersistentMap()
                         sb.clear()
                     }

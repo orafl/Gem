@@ -1,12 +1,5 @@
 package com.rafl.gem.utils
 
-data class Vectwo(val x: Float, val y: Float) {
-    operator fun plus(v: Vectwo) = Vectwo(x + v.x, y + v.y)
-    operator fun minus(v: Vectwo) = Vectwo(x - v.x, y - v.y)
-    infix fun to(v: Vectwo) = v - this
-    operator fun times(s: Float) = Vectwo(s*x, s*y)
-}
-
 data class Point(val x: Float, val y: Float)
 fun p(x: Float, y: Float) = Point(x, y)
 
